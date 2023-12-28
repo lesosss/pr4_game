@@ -29,13 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.txtAmmo = new System.Windows.Forms.Label();
             this.txtScore = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.healthBar = new System.Windows.Forms.ProgressBar();
-            this.player = new System.Windows.Forms.PictureBox();
             this.GameTimer = new System.Windows.Forms.Timer(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.player = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,22 +81,33 @@
             this.healthBar.TabIndex = 3;
             this.healthBar.Value = 100;
             // 
-            // player
-            // 
-            this.player.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.player.Image = ((System.Drawing.Image)(resources.GetObject("player.Image")));
-            this.player.Location = new System.Drawing.Point(436, 344);
-            this.player.Name = "player";
-            this.player.Size = new System.Drawing.Size(103, 86);
-            this.player.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.player.TabIndex = 4;
-            this.player.TabStop = false;
-            // 
             // GameTimer
             // 
             this.GameTimer.Enabled = true;
             this.GameTimer.Interval = 20;
             this.GameTimer.Tick += new System.EventHandler(this.MainTimerEvent);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox1.Image = global::pr4_game.Properties.Resources.zup;
+            this.pictureBox1.Location = new System.Drawing.Point(154, 298);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(103, 86);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            // 
+            // player
+            // 
+            this.player.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.player.Image = global::pr4_game.Properties.Resources.up;
+            this.player.Location = new System.Drawing.Point(460, 298);
+            this.player.Name = "player";
+            this.player.Size = new System.Drawing.Size(103, 86);
+            this.player.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.player.TabIndex = 4;
+            this.player.TabStop = false;
             // 
             // Form1
             // 
@@ -103,6 +115,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
             this.ClientSize = new System.Drawing.Size(924, 662);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.player);
             this.Controls.Add(this.healthBar);
             this.Controls.Add(this.label1);
@@ -112,6 +125,7 @@
             this.Text = "зомбийская наживка";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.KeylsDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.KeylsUp);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.player)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -126,6 +140,7 @@
         private System.Windows.Forms.ProgressBar healthBar;
         private System.Windows.Forms.PictureBox player;
         private System.Windows.Forms.Timer GameTimer;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
